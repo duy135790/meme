@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>TM</title>
+    <link rel="icon" href="theresa.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+      background-image: url('backgroundNightSky.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 20px auto;
+      color: #ffecb3;
+      text-align: center;
+    }
+
+    .controls {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .controls button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      background-color: #ffecb3;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .controls button:hover {
+      background-color: #ffd54f;
+    }
+
+    .top-chart {
+      width: 80%;
+      margin: auto;
+      border-collapse: collapse;
+      font-size: 18px;
+      border-radius: 10px;
+      overflow: hidden;
+      backdrop-filter: blur(4px);
+    }
+
+    .top-chart th {
+      background-color: rgba(255, 255, 255, 0.12);
+      font-weight: bold;
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    .top-chart td {
+      padding: 12px 15px;
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    .top-chart tr {
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    .top-chart tr:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+      transform: scale(1.01);
+    }
+
+    .top-chart img {
+      border-radius: 8px;
+      box-shadow: 0 0 6px rgba(255,255,255,0.3);
+      height: 60px;
+    }
+
+    .top-chart td a {
+      text-decoration: none;
+      color: #ffecb3;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    .top-chart td a:hover {
+      color: #ffd54f;
+    }
+
+    .top-chart .hot {
+      display: inline-block;
+      animation: flicker 1.6s infinite alternate;
+    }
+
+    @keyframes flicker {
+      from { opacity: 0.8; transform: scale(1); }
+      to { opacity: 1; transform: scale(1.1); }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .top-chart tr:nth-child(2) td:first-child::after {
+      content: " 👑";
+      font-size: 20px;
+    }
+    .thanh-ngang {
+      background-color: rgb(102, 20, 127);
+      border: 8px solid black;
+      display: flex;
+      align-items: center;
+      margin-top: 0%;
+    }
+
+    .thanh-ngang input[type="text"] {
+      width: 100%;
+      height: 40px;
+      font-size: 18px;
+      padding: 10px;
+      border: 8px solid rgb(0, 0, 0);
+      margin-right: 10px;
+    }
+
+    .thanh-ngang button {
+      height: 70px;
+      width: 80px;
+      font-size: 16px;
+      background-color: rgb(255, 255, 255);
+      border: 4px solid black;
+    }
+  </style>
+</head>
+<body>
+    <form action="#" method="GET">
+        <div class="thanh-ngang">
+            <a href="website.html" target="_self" title="trở về home">
+                <img src="theresa.png" height="80">
+            </a>    
+            <input type="text" name="tenbaihat" placeholder="Nhập tên bài hát"> 
+            <button type="submit">Tìm Kiếm</button>
+        </div>
+    </form>
+    <h1>Bảng xếp hạng 🔥</h1>
+
+    <!-- Dropdown để lọc theo thể loại -->
+    <select id="filter-genre">
+        <option value="all">🎵 Tất cả thể loại</option>
+        <option value="Motivational">🔥 Sôi Động / Motivational</option>
+        <option value="Epic">🚀 Epic / Cảm Xúc Mạnh</option>
+        <option value="Chill">🌙 Chill</option>
+        <option value="Indie">🎧 Indie</option>
+    </select>
+    
+    <table class="top-chart">
+        <tr style="background-color: rgba(255, 255, 255, 0.1);">
+            <th>#</th>
+            <th>Ảnh</th>
+            <th>Bài hát</th>
+            <th>Nghệ sĩ</th>
+            <th>Thể loại</th>
+            <th>Lượt xem</th>
+        </tr>
+    
+       <!-- 🎧 Chill -->
+<tr data-genre="Chill">
+    <td>#1</td>
+    <td><img src="VexentoHome.jpg" height="60"></td>
+    <td><a href="thongtinVEXETO.HTML">Home</a></td>
+    <td>Vexento</td>
+    <td>Chill</td>
+    <td>🔥🔥</td>
+</tr>
+<tr data-genre="Chill">
+    <td>#2</td>
+    <td><img src="Haru.jpg" height="60"></td>
+    <td><a href="thongtinharu.html">Haru</a></td>
+    <td>Yorushika</td>
+    <td>Chill</td>
+    <td>🔥🔥🔥</td>
+</tr>
+<tr data-genre="Chill">
+    <td>#3</td>
+    <td><img src="whitenights.jpg" height="60"></td>
+    <td><a href="thongtinWhitenight.html">White Nights</a></td>
+    <td>Jake Miller, HOYO-MiX</td>
+    <td>Chill</td>
+    <td>🔥🔥</td>
+</tr>
+<tr data-genre="Chill">
+    <td>#4</td>
+    <td><img src="Robin.webp" height="60"></td>
+    <td><a href="thongtinRobin.html">Hope Is the Thing With Feathers</a></td>
+    <td>Chevy, HOYO-MiX</td>
+    <td>Chill</td>
+    <td>🔥</td>
+</tr>
+<tr data-genre="Chill">
+    <td>#5</td>
+    <td><img src="lonely.jpg" height="60"></td>
+    <td><a href="thongtinLonely.html">Lonely Dance</a></td>
+    <td>Vexento</td>
+    <td>Chill</td>
+    <td>🔥🔥</td>
+</tr>
+<tr data-genre="Epic">
+    <td>#6</td>
+    <td><img src="ab67616d0000b273c017c4e208b9aa70cd07a1d2.jpg" height="60"></td>
+    <td><a href="thongtinAcross.html">Across The Wind</a></td>
+    <td>Arknights</td>
+    <td>Epic</td>
+    <td>🔥🔥🔥</td>
+</tr>
+<tr data-genre="Epic">
+    <td>#7</td>
+    <td><img src="Reforge.webp" height="60"></td>
+    <td><a href="thongtinReforge.html">Reforge</a></td>
+    <td>Chevy, HOYO-MiX</td>
+    <td>Epic</td>
+    <td>🔥🔥</td>
+</tr>
+<tr data-genre="Epic">
+    <td>#8</td>
+    <td><img src="artworks-000168747774-km7vyi-t500x500.jpg" height="60"></td>
+    <td><a href="thongtinnightsky.html">アスノヨゾラ哨戒班</a></td>
+    <td>Orangestar</td>
+    <td>Epic</td>
+    <td>🔥🔥🔥</td>
+</tr>
+<tr data-genre="Epic">
+    <td>#9</td>
+    <td><img src="whitenights.jpg" height="60"></td>
+    <td><a href="thongtinWhitenight.html">White Nights</a></td>
+    <td>HOYO-MiX</td>
+    <td>Epic</td>
+    <td>🔥🔥</td>
+</tr>
+<tr data-genre="Epic">
+    <td>#10</td>
+    <td><img src="Sures.jpg" height="60"></td>
+    <td><a href="thongtinSurge.html">Surges</a></td>
+    <td>Orangestar</td>
+    <td>Epic</td>
+    <td>🔥🔥🔥</td>
+</tr>
+
+<!-- 🔥 Sôi Động / Motivational -->
+<tr data-genre="Motivational">
+    <td>#11</td>
+    <td><img src="avicii.jpg" height="60"></td>
+    <td><a href="thongtinThenight.html">The Nights</a></td>
+    <td>Avicii</td>
+    <td>Motivational</td>
+    <td>🔥🔥🔥</td>
+</tr>
+<tr data-genre="Motivational">
+    <td>#12</td>
+    <td><img src="idol.jpg" height="60"></td>
+    <td><a href="thongtinIDOL.html">Idol</a></td>
+    <td>Yoasobi</td>
+    <td>Motivational</td>
+    <td>🔥🔥</td>
+</tr>
+<tr data-genre="Motivational">
+    <td>#13</td>
+    <td><img src="artworks-zj26ksurO1jziY8F-avo19Q-t500x500.jpg" height="60"></td>
+    <td><a href="thongtinmonitor.html">Monitoring</a></td>
+    <td>Deco*27</td>
+    <td>Motivational</td>
+    <td>🔥🔥</td>
+</tr>
+<tr data-genre="Motivational">
+    <td>#14</td>
+    <td><img src="Android_Girl_-_Deco_27.jpg" height="60"></td>
+    <td><a href="thongtinAndroid.html">Android Girl</a></td>
+    <td>Deco*27</td>
+    <td>Motivational</td>
+    <td>🔥🔥🔥</td>
+</tr>
+
+<!-- 🎨 Indie & Art-style -->
+<tr data-genre="Indie">
+    <td>#15</td>
+    <td><img src="kaijuu.jpg" height="60"></td>
+    <td><a href="thongtinKaijuu.html">Kaijuu</a></td>
+    <td>Sakanaction</td>
+    <td>Indie</td>
+    <td>🔥🔥</td>
+</tr>
+<tr data-genre="Indie">
+    <td>#16</td>
+    <td><img src="waitingforlove.jpg" height="60"></td>
+    <td><a href="thongtinWaitingforlove.html">Waiting for Love</a></td>
+    <td>Avicii</td>
+    <td>Indie</td>
+    <td>🔥🔥🔥</td>
+</tr>
+<tr data-genre="Indie">
+    <td>#16</td>
+    <td><img src="wasurete.png" height="60"></td>
+    <td><a href="thongtinWasurete.html">Wasurete</a></td>
+    <td>Yorushika</td>
+    <td>Indie</td>
+    <td>🔥🔥🔥</td>
+</tr>
+<tr data-genre="J-pop">
+    <td>#17</td>
+    <td><img src="monster.jpg" height="60"></td>
+    <td><a href="thongtinmonster.html">Monster</a></td>
+    <td>YOASOBI</td>
+    <td>J-pop</td>
+    <td>🔥🔥🔥</td>
+</tr>
+<tr data-genre="Chill">
+    <td>#18</td>
+    <td><img src="lonely.jpg" height="60"></td>
+    <td><a href="thongtinLonely.html">Lonely Dance</a></td>
+    <td>Vexento</td>
+    <td>Chill</td>
+    <td>🔥🔥</td>
+</tr>
+
+
+    </table>
+    <script>
+      document.getElementById('filter-genre').addEventListener('change', function () {
+        const selected = this.value;
+        const rows = document.querySelectorAll('.top-chart tr[data-genre]');
+    
+        rows.forEach(row => {
+          const genre = row.getAttribute('data-genre');
+          row.style.display = (selected === 'all' || genre === selected) ? '' : 'none';
+        });
+      });
+    </script>
+    
